@@ -12,3 +12,18 @@
 	padding: 15px 0;
 	color: #fff;
 }
+.action-content {
+	padding-top: 20px;
+}
+.state {color: red;}
+.btn {box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);}
+.btn-circle
+{
+	width: 50px;
+	height: 50px;
+    text-align: center;
+    padding: 8px;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 50px;
+}
