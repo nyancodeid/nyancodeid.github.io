@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Text to Gaul</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<link rel="stylesheet" href="http://v4-alpha.getbootstrap.com/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="https://limonte.github.io/sweetalert2/dist/sweetalert2.min.css">
+</head>
+<body>
+
+    <header class="navbar navbar-light navbar-toggleable-md bd-navbar">
+	  <nav class="container">
+
+	    <div class="d-flex justify-content-between hidden-lg-up">
+	      <a class="navbar-brand" href="/">
+	        nyancodeid.github.io
+	      </a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bd-main-nav" aria-controls="bd-main-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="navbar-toggler-icon"></span>
+	      </button>
+	    </div>
+
+	    <div class="collapse navbar-collapse" id="bd-main-nav">
+	      <ul class="nav navbar-nav">
+	        <li class="nav-item active">
+	          <a class="nav-item nav-link " href="https://nyancodeid.github.io/text-to-gaul" >NyanCode GitHub</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-item nav-link " href="https://nyancode.web.id" >Website</a>
+	        </li>
+	      </ul>
+	    </div>
+	  </nav>
+	</header>
+
+
+  	<div id="content">
+      <div class="bd-pageheader text-center text-sm-left">
+	  <div class="container">
+	    <h1>Text-to-Gaul</h1>
+	    <p class="lead">
+	      Convert bahasa sehari hari kamu menjadi bahasa gavauvul. 
+	    </p>
+
+	  </div>
+	</div>	
+	<div class="container">
+		<div class="row main-content" >
+			<div class="col-md-6">
+				<span class="subtitle">Source</span>
+				<textarea name="" class="form-control" id="source" ></textarea>
+			</div>
+			<div class="col-md-6">
+				<span class="subtitle">Results</span>
+				<textarea name="" class="form-control" id="result" ></textarea>
+			</div>
+		</div>
+		<div class="row button-group">
+			<div class="col-md-6">
+				<button type="button" id="submit" class="btn btn-primary btn-block" onclick="convert()">CONVERT</button>
+			</div>
+			<div class="col-md-6">		
+				<button type="button" id="submit" class="btn btn-primary btn-block" onclick="copyClip()">COPY TO CLIPBOARD</button>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script type="text/javascript" src="http://v4-alpha.getbootstrap.com/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://limonte.github.io/sweetalert2/dist/sweetalert2.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
