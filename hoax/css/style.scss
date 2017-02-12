@@ -1,0 +1,331 @@
+$header-primary-color: linear-gradient(to right, #347eff 0%, #1ea3ff 100%);
+$header-font-family: 'Avenir Next',"Helvetica Neue", Helvetica,;
+$header-text-color: #fff;
+$blue-color: #347eff;
+$shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12);
+$grey: #9e9e9e;
+
+@font-face {
+font-family: 'Avenir Next';
+font-style: normal;
+font-weight: normal;
+src: local('Avenir Next LT Pro Regular'), url('../fonts/AvenirNextLTPro-Regular.woff') format('woff');
+}
+
+body {
+	padding: 0;
+	margin: 0;    
+	-webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+	font-family: $header-font-family;
+}
+a {
+	text-decoration: none;
+}
+h1 {
+	margin: 50px 0 0 0;
+    font-size: 48px;
+    font-weight: 400;
+    color: inherit;
+    letter-spacing: -0.05em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+    cursor: default;
+    line-height: 64px;
+}
+h2 {
+	font-size: 32px;
+	font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -0.02em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+}
+h3 {
+	font-size: 18px;
+	font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: -0.02em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+}
+.bayangan-1 {
+	box-shadow: 0 2px 4px -1px rgba(0,0,0,0.06), 0 4px 5px 0 rgba(0,0,0,0.06), 0 1px 10px 0 rgba(0,0,0,0.08);
+	-webkit-box-shadow: 0 2px 4px -1px rgba(0,0,0,0.06), 0 4px 5px 0 rgba(0,0,0,0.06), 0 1px 10px 0 rgba(0,0,0,0.08);
+}
+.container {
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+}
+div.grid-4 {
+	width: 33.33333333%;
+	float: left;
+	position: relative;
+}
+div.card {
+	width: 95%;
+	margin: 0 auto;
+	background: #f7f7f7;
+	border-radius: 3px;
+	color: #000;
+	padding: 10px 0 35px 10px;
+}
+
+header {
+	height: 64px;
+	width: 100%;
+	background: $header-primary-color;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 60;
+	border-color: rgba(0,0,0,0.14);
+    transition: box-shadow 200ms ease-in-out; /* animasi */
+    color: $header-text-color;
+	line-height: 64px;
+	header-wrapper {
+		width: 90%;
+		margin: 0 auto;
+		a {
+			text-decoration: none;
+			color: inherit;
+			h1 {
+				font-size: 20px;
+				margin: 0;
+				font-weight: 400;
+			}
+		}
+		nav {
+			flex: 1;
+			ul {
+				margin: 0;
+				float: right;
+				li {
+					display: inline-block;	
+					font-size: 15px;
+				    transition: .2s color;
+				    transition-duration: .3s;
+				    padding: 0 15px;
+				    &:hover {
+				    	color: rgba(255, 255, 255, 0.65);
+				    }
+				}	
+			}
+			.navbar-collapse {
+			  position: relative;
+			  display:none;
+			  float:right;
+			  span {
+			  	user-select: none;
+			  	vertical-align: middle;
+			  }
+			  ul {
+			    position: absolute;
+			    top: 1em;
+			    right: 0;
+			    transition: all 0.3s ease;
+			    transform: scale(0);
+			    -webkit-transform-origin: right top 0px; 
+			    box-shadow: $shadow;
+			    background: #f7f7f7;
+			    color: rgba(0,0,0,0.7);
+				margin: 0;
+				padding-left: 0;
+				min-width: 200px;
+			    li {
+			      display: block;
+			      color: inherit;
+			      padding: 0;
+			      a {
+			        width: 100%;
+			        padding: 0 18px;
+			        display: inline-block;
+			        white-space: pre;
+			        box-sizing: border-box;
+			        &:hover {
+			          background: lighten($grey, 30%);
+			        }
+			      }
+			    }
+			  }
+			  &:hover {
+			    ul {
+			      -webkit-transform-origin: right top 0px;
+			      transform-origin: right top 0px;
+			      transform: scale(1);
+			    }
+			  }
+			}
+		}
+
+
+	}
+}
+
+main {
+	display: block;
+	width: 100%;
+	background: $header-primary-color;
+	padding-top: 64px;
+
+	.btn {
+		padding: 15px 20px;
+		color: $blue-color;
+		background: #fff;
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+	    transition: .2s color;
+	    transition-duration: .3s;
+	}
+	.btn:hover {
+		color: #3960a4;
+	}
+
+	big-hero {
+		display: block;
+		position: relative;
+		width: 90%;
+		margin: 0 auto;
+		padding: 20px 15px 90px 15px;
+		color: $header-text-color;
+		div.big-hero-content {
+			padding: 20px 0;
+			width: 50%;
+			max-width: 500px;
+			text-align: left;
+			h3 {
+			    color: #d8e8ff;
+			    margin: 20px 0px 32px;
+			    max-width: 500px;
+			}
+		}
+	}
+
+	step-by {
+		display: block;
+		height: 86px;
+		line-height: 86px;
+		background: rgba(0,0,0,0.06);
+		width: inherit;
+		color: #fff;
+		div.step-by-wrapper {
+			width: 90%;
+			margin: 0 auto;
+			text-align: center;
+		}
+		div.step-by-item {
+			display: inline-block;
+			height: 52px;
+		    line-height: 52px;
+		    padding: 0 40px 0 40px;
+		    background: #fff;
+		    border-radius: 3px;
+			h4 {
+				margin: 0;
+				font-weight: 400;
+				color: rgb(42, 123, 230);
+				text-align: center;
+				span.material-icons {
+					display: inline-flex;
+    				vertical-align: middle;
+    				padding-bottom: 4px;
+				}
+			}
+		}
+	}
+
+	section#macam {
+		width: inherit;
+		background: rgba(0,0,0,0.1);
+		padding: 20px 0;
+		color: #fff;
+		div.macam-content {
+			width: 90%;
+			margin: 0 auto;
+			text-align: center;
+			h2 {
+				margin-bottom: 0.5em;
+				span {
+					font-weight: bolder;
+					border-bottom: 1px solid #fff;
+				}
+			}
+			div.card {
+				padding-top: 20px;
+				span.material-icons {
+					font-size: 48px;
+					color: rgb(42, 123, 230);
+				}
+				p {
+					margin: 2em 0;
+				}
+				a:hover {
+					background: rgb(42, 123, 230);
+					color: #f7f7f7;
+				}
+			}
+
+		} 
+	}
+}
+
+/* Medium */
+@media (min-width:992px) {
+	
+}
+
+/* Tablet */
+@media (min-width:768px) {
+
+}
+
+/* HP */
+@media screen and (max-width:768px) {
+	div.big-hero-content {
+		width: 100% !important;
+		text-align: center !important;
+	}
+	.hide-mobile {
+		display: none;
+	}
+	div.navbar-collapse {
+		display: block !important;
+	}
+	step-by {
+		height: auto !important; 
+		> div.step-by-wrapper {
+			padding: 10px 0 !important;
+			.step-by-item {
+				display: block !important;
+				margin: 5px 0 !important;
+				padding: 0 40px 0 10px !important; 
+	    		width: calc(100% - 50px) !important;
+				h4 {
+				    text-align: left !important;
+				}
+			}
+		}
+	}
+	div.macam-content {
+		div.container {
+    		flex-direction: column !important;
+			div.grid-4 {
+				width: 100%;
+	    		margin-bottom: 5px;
+	    		.card {
+					padding: 10px 10px 35px 10px;
+	    		}
+			}
+		}
+	}
+}
+
+[data-app="antihoax"] {
+	[data-row=""] {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+	}
+	[data-flex=""] {
+		flex: 1;
+	} 
+}
