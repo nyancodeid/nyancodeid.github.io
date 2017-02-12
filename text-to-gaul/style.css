@@ -1,0 +1,14 @@
+.main-content {
+	padding: 20px 0;
+}
+.main-content > div > textarea {
+    height: 185px;
+}
+.button-group > div {
+	margin-bottom: 10px;
+}
+.bd-pageheader {
+	background: #E91E63;
+	padding: 15px 0;
+	color: #fff;
+}
