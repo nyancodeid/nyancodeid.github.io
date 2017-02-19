@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>nyanRepeat</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+<body>
+	<div data-repeat="posts">
+		<h2 data-repeat-item="nama"></h2>
+		<span data-repeat-item="kelas"></span>
+		<a href="#" data-repeat-item="sekolah"></a>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="https://gitcdn.xyz/repo/nyancodeid/nyanRepeat/master/dist/nyanrepeat.min.js"></script>
+	<script>
+		var posts = [
+			{
+				nama: 'Ryan Aunur',
+				kelas: 'XII-TKJ',
+				sekolah: 'SMKN 3 Jombang'
+			},
+			{
+				nama: 'Wildan Aunur',
+				kelas: 'XII-TKJ',
+				sekolah: 'SMKN 1 Jombang'
+			},
+			{
+				nama: 'Ryan Aunur',
+				kelas: 'XII-TKJ',
+				sekolah: 'SMKN 3 Jombang'
+			},
+			{
+				nama: 'Wildan Aunur',
+				kelas: 'XII-TKJ',
+				sekolah: 'SMKN 4 Jombang'
+			},
+			{
+				nama: 'Ryan Aunur Rassyid',
+				kelas: 'XII-TKJ',
+				sekolah: 'SMKN 3 Jombang'
+			}
+		];
+
+		/* Run nyanRepeat */
+		nyan.repeat.init();
+	</script>
+</body>
+</html>
