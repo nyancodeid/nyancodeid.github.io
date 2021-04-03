@@ -1,7 +1,3 @@
-const client = mqtt.connect(`ws://broker.hivemq.com:8000/mqtt`, {
-  debug: true
-});
-
 Vue.use(VueTippy);
 Vue.component("tippy", VueTippy.TippyComponent);
 
@@ -76,6 +72,10 @@ var app = new Vue({
       }
     },
     subscribeRealtimeData() {
+      const client = mqtt.connect(`ws://broker.hivemq.com:8000/mqtt`, {
+        debug: true
+      });
+
       client.subscribe("tradex/pair/#");
       client.on("message", (topic, message) => {
         if (topic.startsWith("tradex/pair/")) {
