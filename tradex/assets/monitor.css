@@ -1,0 +1,798 @@
+* {
+  font-family: Trebuchet MS, roboto, ubuntu, sans-serif;
+}
+
+.container-1yeiTT0O- {
+  overflow: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 1px;
+  box-shadow: 0 1px 8px 0 rgba(19, 23, 34, 0.5);
+}
+
+.container-1yeiTT0O-::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.container-1yeiTT0O-::-webkit-scrollbar-thumb {
+  border: 1px solid;
+  border-color: #f1f3f6;
+  border-radius: 3px;
+  background-color: #9db2bd;
+}
+
+.container-1yeiTT0O-::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 3px;
+}
+
+.container-1yeiTT0O-.top-eKw7x7mr- {
+  background-color: #fff;
+  border-radius: 1px;
+  box-shadow: 0 -1px 8px 0 rgba(19, 23, 34, 0.5);
+}
+
+.container-1yeiTT0O-.animated-3deVJX7u- {
+  visibility: hidden;
+}
+
+.technicalsTab-1vZ2_uY_- {
+  background-color: #fff;
+  padding: 25px;
+  overflow: auto;
+}
+
+.container-21YFOnrS- {
+  background-color: #fff;
+}
+
+.title-3XEQduY7- {
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #4c525e;
+}
+
+.speedometersContainer-1EFQq-4i- {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin: 20px;
+  margin-bottom: 40px;
+}
+
+.speedometerWrapperMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  order: 2;
+  min-width: 343px;
+  contain: content;
+}
+
+.speedometerTitle {
+  margin: 30px 0;
+  font-size: 20px;
+  color: #4a4a4a;
+  letter-spacing: 0.3px;
+  font-weight: 400;
+}
+
+.speedometerSignal {
+  margin: 25px 0 30px;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  font-weight: 700;
+}
+
+.brandColor {
+  color: #3bb3e4;
+}
+
+.redColor {
+  color: #ff4a68;
+}
+
+.neutralColor {
+  color: #9db2bd;
+}
+
+.countersWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.counterWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 26px;
+}
+
+.counterNumber {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.counterTitle {
+  font-size: 12px;
+  color: #9db2bd;
+}
+
+.tablesWrapper-3-2f1vZg- {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-top: 1px solid;
+  border-top-color: #eceff2;
+}
+
+.tablesWrapper-3-2f1vZg- table {
+  width: 47%;
+}
+
+.summary {
+  order: 1;
+  flex-grow: 2;
+  width: 100%;
+}
+
+.summary .speedometerSignal {
+  margin: 32px 0 18px;
+  font-size: 30px;
+}
+
+.page-wide .summary {
+  order: 2;
+  width: auto;
+}
+
+.page-wide .speedometerWrapper {
+  min-width: auto;
+}
+
+.popupClass-3P4dHQMX- .summary {
+  order: 1;
+  flex-grow: 2;
+  width: 100%;
+}
+
+.tableWithAction-2OCRQQ8y- tr td:last-child,
+.tableWithAction-2OCRQQ8y- tr th:last-child {
+  text-align: left;
+}
+
+.maTable-27Z4Dq6Y- tr:nth-child(2n) {
+  border-bottom: none;
+}
+
+.maTable-27Z4Dq6Y- tr:nth-last-child(-n + 3) {
+  border-bottom: 1px solid;
+  border-bottom-color: #eceff2;
+}
+
+.maTable-27Z4Dq6Y- tr:last-child {
+  border-bottom: none;
+}
+
+@media screen and (max-width: 500px) {
+  .summary .speedometerSignal {
+    margin: 25px 0 30px;
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .tablesWrapper-3-2f1vZg- table {
+    width: 100%;
+  }
+
+  .speedometersContainer-1EFQq-4i- {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+th {
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+.table-1i1M26QY- {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.title-25TMqr29-,
+.title-25TMqr29- a {
+  margin: 20px 0;
+  color: #4c525e;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: left;
+  font-weight: 700;
+}
+
+.feature-no-touch .title-25TMqr29- a:hover {
+  color: #3bb3e4;
+}
+
+.header-1ZkmwUSJ- {
+  height: 40px;
+  color: #9db2bd;
+  font-size: 12px;
+}
+
+.row-2H4iFp12- {
+  height: 36px;
+  color: #4a4a4a;
+  font-size: 14px;
+  border-bottom: 1px solid;
+  border-bottom-color: #eceff2;
+}
+
+.row-2H4iFp12-:last-child {
+  border: none;
+}
+
+.row-2H4iFp12- a {
+  color: #4a4a4a;
+  transition: color 0.35s ease;
+}
+
+.feature-no-touch .row-2H4iFp12- a:hover {
+  color: #3bb3e4;
+}
+
+.cell-6KbOCOru- {
+  padding-left: 16px;
+  text-align: right;
+}
+
+.cell-6KbOCOru-:first-child {
+  padding-left: 0;
+  text-align: left;
+}
+
+.brandColor-2uL2f5w_- {
+  color: #3bb3e4;
+}
+
+.redColor-2RhlmomL- {
+  color: #ff4a68;
+}
+
+.neutralColor-1oFn_sJr- {
+  color: #9db2bd;
+}
+
+@media screen and (max-width: 1019px) {
+  .cell-6KbOCOru-:first-child {
+    padding: 8px 0;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.speedometerWrapper {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+}
+
+.speedometerTextWrapper {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  width: 100%;
+  left: 0;
+  align-items: center;
+}
+
+.speedometerText {
+  display: flex;
+  position: relative;
+  width: 52px;
+  justify-content: center;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: #262b3e;
+}
+
+.textTop {
+  width: 100%;
+  text-align: center;
+}
+
+.textBottom {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 0;
+}
+
+.textBottomWrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.bottomSignals,
+.middleSignals {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.middleSignals {
+  width: 114%;
+}
+
+.bottomSignals {
+  width: 153%;
+  text-align: center;
+}
+
+.sizeWrapper {
+  position: relative;
+  width: 220px;
+  height: 110px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.circleWrapper {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.sector {
+  position: absolute;
+  width: 109px;
+  height: 109px;
+  left: 0;
+  top: 0;
+  border: 1px solid;
+  border-color: #fff;
+  transform-origin: 100% 100%;
+}
+
+.sectorStrongSell {
+  background-color: #ff4a68;
+  transform: rotate(0deg) skew(54deg);
+}
+
+.sectorSell {
+  background-color: rgba(255, 74, 104, 0.6);
+  transform: rotate(36deg) skew(54deg);
+}
+
+.sectorNeutral {
+  background-color: #f2f3f5;
+  transform: rotate(72deg) skew(54deg);
+}
+
+.sectorBuy {
+  background-color: rgba(59, 179, 228, 0.6);
+  transform: rotate(108deg) skew(54deg);
+}
+
+.sectorStrongBuy {
+  background-color: #3bb3e4;
+  transform: rotate(144deg) skew(54deg);
+}
+
+.semicircle {
+  left: 4px;
+  top: 4px;
+  background-color: #fff;
+  border: 1px solid;
+  border-color: #fff;
+  transition: box-shadow 1.5s ease;
+}
+
+.semicircle,
+.semicircle:after,
+.semicircle:before {
+  position: absolute;
+  width: 210px;
+  height: 105px;
+  border-top-left-radius: 210px;
+  border-top-right-radius: 210px;
+}
+
+.semicircle:after,
+.semicircle:before {
+  content: " ";
+  display: block;
+  bottom: 0;
+}
+
+.semicircle:before {
+  background-image: linear-gradient(190deg, hsla(0, 0%, 100%, 0) 70%, #fff);
+}
+
+.semicircle:after {
+  background-image: linear-gradient(170deg, hsla(0, 0%, 100%, 0) 70%, #fff);
+}
+
+.semicircleNeutral {
+  box-shadow: inset 0 30px 60px -10px #f2f3f5;
+}
+
+.semicircleBuy {
+  box-shadow: inset 0 30px 60px -10px rgba(59, 179, 228, 0.3);
+}
+
+.semicircleStrongBuy {
+  box-shadow: inset 0 30px 60px -10px rgba(59, 179, 228, 0.6);
+}
+
+.semicircleSell {
+  box-shadow: inset 0 30px 60px -10px rgba(255, 74, 104, 0.3);
+}
+
+.semicircleStrongSell {
+  box-shadow: inset 0 30px 60px -10px rgba(255, 74, 104, 0.6);
+}
+
+.dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #131722;
+  bottom: 0;
+  left: calc(50% - 4px);
+  border-radius: 4px;
+}
+
+.arrow {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 8px;
+  height: 97px;
+  bottom: 4px;
+  left: calc(50% - 4px);
+  transform-origin: 50% 100%;
+  transition: transform 1.5s ease;
+}
+
+.arrowHidden {
+  width: 2px;
+  height: 8px;
+  background-color: transparent;
+}
+
+.arrowMain {
+  width: 2px;
+  height: 90px;
+  border-radius: 1px;
+  background-color: #131722;
+}
+
+.arrowToBuy {
+  transform: rotate(36deg);
+}
+
+.arrowToStrongBuy {
+  transform: rotate(72deg);
+}
+
+.arrowToSell {
+  transform: rotate(-36deg);
+}
+
+.arrowToStrongSell {
+  transform: rotate(-72deg);
+}
+
+.arrowBuyShudder {
+  animation: buyShudder 10s infinite;
+}
+
+.arrowStrongBuyShudder {
+  animation: strongBuyShudder 10s infinite;
+}
+
+.arrowSellShudder {
+  animation: sellShudder 10s infinite;
+}
+
+.arrowStrongSellShudder {
+  animation: strongSellShudder 10s infinite;
+}
+
+.arrowNeutralShudder {
+  animation: NeutralShudder 10s infinite;
+}
+
+@keyframes buyShudder {
+  0% {
+    transform: rotate(36deg);
+  }
+
+  35% {
+    transform: rotate(34deg);
+  }
+
+  40% {
+    transform: rotate(36deg);
+  }
+
+  45% {
+    transform: rotate(33deg);
+  }
+
+  60% {
+    transform: rotate(31deg);
+  }
+
+  80% {
+    transform: rotate(35deg);
+  }
+
+  90% {
+    transform: rotate(37deg);
+  }
+
+  to {
+    transform: rotate(36deg);
+  }
+}
+
+@keyframes strongBuyShudder {
+  0% {
+    transform: rotate(72deg);
+  }
+
+  35% {
+    transform: rotate(70deg);
+  }
+
+  40% {
+    transform: rotate(72deg);
+  }
+
+  45% {
+    transform: rotate(69deg);
+  }
+
+  60% {
+    transform: rotate(67deg);
+  }
+
+  80% {
+    transform: rotate(69deg);
+  }
+
+  90% {
+    transform: rotate(73deg);
+  }
+
+  to {
+    transform: rotate(72deg);
+  }
+}
+
+@keyframes sellShudder {
+  0% {
+    transform: rotate(-36deg);
+  }
+
+  35% {
+    transform: rotate(-34deg);
+  }
+
+  40% {
+    transform: rotate(-36deg);
+  }
+
+  45% {
+    transform: rotate(-33deg);
+  }
+
+  60% {
+    transform: rotate(-31deg);
+  }
+
+  80% {
+    transform: rotate(-35deg);
+  }
+
+  90% {
+    transform: rotate(-37deg);
+  }
+
+  to {
+    transform: rotate(-36deg);
+  }
+}
+
+@keyframes strongSellShudder {
+  0% {
+    transform: rotate(-72deg);
+  }
+
+  35% {
+    transform: rotate(-70deg);
+  }
+
+  40% {
+    transform: rotate(-72deg);
+  }
+
+  45% {
+    transform: rotate(-69deg);
+  }
+
+  60% {
+    transform: rotate(-67deg);
+  }
+
+  80% {
+    transform: rotate(-69deg);
+  }
+
+  90% {
+    transform: rotate(-73deg);
+  }
+
+  to {
+    transform: rotate(-72deg);
+  }
+}
+
+@keyframes NeutralShudder {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  35% {
+    transform: rotate(-2deg);
+  }
+
+  40% {
+    transform: rotate(0deg);
+  }
+
+  45% {
+    transform: rotate(-3deg);
+  }
+
+  60% {
+    transform: rotate(-5deg);
+  }
+
+  80% {
+    transform: rotate(-3deg);
+  }
+
+  90% {
+    transform: rotate(1deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .large .sizeWrapper {
+    width: 316px;
+    height: 158px;
+    margin-top: 25px;
+  }
+
+  .large .bottomSignals,
+  .large .middleSignals {
+    margin: 32px 0;
+  }
+
+  .large .middleSignals {
+    width: 104%;
+  }
+
+  .large .bottomSignals {
+    width: 140%;
+  }
+
+  .large .speedometerText {
+    font-size: 12px;
+  }
+
+  .large .circleWrapper {
+    width: 316px;
+    height: 316px;
+  }
+
+  .large .sector {
+    width: 157px;
+    height: 157px;
+  }
+
+  .large .semicircle,
+  .large .semicircle:after,
+  .large .semicircle:before {
+    width: 306px;
+    height: 153px;
+    border-top-left-radius: 306px;
+    border-top-right-radius: 306px;
+  }
+
+  .large .arrow {
+    height: 145px;
+  }
+
+  .large .arrowMain {
+    height: 130px;
+  }
+}
+
+.small .sizeWrapper {
+  width: 154px;
+  height: 77px;
+  margin-top: 15px;
+}
+
+.small .bottomSignals,
+.small .middleSignals {
+  margin: 13px 0;
+}
+
+.small .middleSignals {
+  width: 130%;
+}
+
+.small .bottomSignals {
+  width: 168%;
+}
+
+.small .speedometerText {
+  font-size: 9px;
+  width: 48px;
+}
+
+.small .circleWrapper {
+  width: 154px;
+  height: 154px;
+}
+
+.small .sector {
+  width: 76px;
+  height: 76px;
+}
+
+.small .semicircle,
+.small .semicircle:after,
+.small .semicircle:before {
+  width: 144px;
+  height: 72px;
+  border-top-left-radius: 144px;
+  border-top-right-radius: 144px;
+}
+
+.small .arrow {
+  height: 64px;
+}
+
+.small .arrowMain {
+  height: 70px;
+}

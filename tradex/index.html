@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/monitor.css">
+</head>
+
+<body>
+  <div id="app">
+    <div class="flex justify-between items-center px-4 py-6">
+      <div class="flex">
+        <div class="inline-block mr-4" v-for="(state, index) in states" :key="index">
+          <input type="checkbox" :id="`state-${index}`" :value="state" v-model.lazy="filtered">
+          <label :for="`state-${index}`">{{ stateTitle(state) }}</label>
+        </div>
+      </div>
+      <div>
+        <input type="text" @input="debounceSearch" class="focus:outline-none px-6 py-2 bg-gray-100 w-64 rounded-md" placeholder="Search" value="btc">
+      </div>
+    </div>
+
+    <div class="flex justify-between items-center mx-4">
+      <span>Halaman : </span>
+      <ul class="flex paginate">
+        <li class="paginate-item rounded-md" v-for="pageNumber in totalPages" v-if="Math.abs(pageNumber - currentPage) < 3 || pageNumber == totalPages || pageNumber == 1">
+          <a href="#" v-bind:key="pageNumber" @click="setPage(pageNumber)" class="rounded-md" :class="{current: currentPage === pageNumber, last: (pageNumber == totalPages && Math.abs(pageNumber - currentPage) > 3), first:(pageNumber == 1 && Math.abs(pageNumber - currentPage) > 3)}">{{ pageNumber }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="flex flex-wrap">
+      <div class="w-full md:w-1/2 flex" v-for="widget in filteredWidget" :key="widget.pair">
+        <keep-alive>
+          <widget :widget="widget" :price="summaries[widget.pair]"></widget>
+        </keep-alive>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/x-template" id="widget-layout">
+    <div :id="`widget-${widget.pair}`" class="flex flex-wrap w-full">
+      <div class="w-full md:w-7/12">
+        <div class="speedometerWrapperMain summary">
+          <span class="speedometerTitle font-bold">{{ widget.description }}</span>
+          <div class="container">
+            <div class="speedometerWrapper">
+              <div class="speedometerTextWrapper">
+                <span class="speedometerText textTop">Neutral</span>
+                <span class="middleSignals">
+                  <span class="speedometerText">Sell</span>
+                  <span class="speedometerText">Buy</span>
+                </span>
+                <span class="bottomSignals">
+                  <span class="speedometerText textBottom">
+                    <span class="textBottomWrap">Strong Sell</span>
+                  </span>
+                  <span class="speedometerText textBottom">
+                    <span class="textBottomWrap">Strong Buy</span>
+                  </span>
+                </span>
+              </div>
+              <div class="sizeWrapper">
+                <div class="circleWrapper">
+                  <div class="sector sectorStrongSell"></div>
+                  <div class="sector sectorSell"></div>
+                  <div class="sector sectorNeutral"></div>
+                  <div class="sector sectorBuy"></div>
+                  <div class="sector sectorStrongBuy"></div>
+                  <div class="semicircle" :class="`semicircle${widget._meta_.state}`"></div>
+                </div>
+                <div class="dot"></div>
+                <div class="arrow" :id="`arrow-element-${widget.pair}`">
+                  <div class="arrowMain"></div>
+                  <div class="arrowHidden"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="speedometerSignal" :class="stateTitleClass(widget._meta_.state)">
+            {{ stateTitle(widget._meta_.state) }}
+          </span>
+        </div>
+      </div>
+      <div class="w-full md:w-5/12 pt-4 px-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <img :src="widget.url_logo_png" class="w-5 h-5 mr-4" alt="">
+            <h2 class="font-bold">{{ widget.description }}
+              <span v-if="price" v-html="calc(price)"></span>
+            </h2>
+          </div>
+  
+          <a :href="`https://indodax.com/chart/${widget.symbol}`" target="_blank">
+            <svg viewBox="0 0 40 35" xmlns="http://www.w3.org/2000/svg" width="33" height="19"><path fill="#2196F3" d="M29.032 7.382a5.47 5.47 0 0 1 .963 2.872A4.502 4.502 0 0 1 28.5 19H6a5.98 5.98 0 0 1-4.222-1.737l9.546-7.556c.35.187.75.293 1.176.293a2.49 2.49 0 0 0 1.066-.238l4.55 3.981a2.5 2.5 0 1 0 4.711-.157l6.205-6.204zm-1.414-1.414l-6.204 6.204A2.494 2.494 0 0 0 20.5 12a2.49 2.49 0 0 0-1.066.238l-4.55-3.981a2.5 2.5 0 1 0-4.801-.118L.608 15.638A6 6 0 0 1 6.061 7a8.001 8.001 0 0 1 15.625-1.227A5.474 5.474 0 0 1 24.5 5c1.157 0 2.231.358 3.118.968z"/></svg>
+          </a>
+        </div>
+  
+        <div class="flex flex-wrap justify-between my-4" style="font-size: .7em;">
+          <span>Last: <h4 class="text-sm font-bold" v-if="widget.price">{{ toDecimalReadable(widget.pair, widget.price.last) }}</h4>
+            </span>
+          <span>High: <h4 class="text-sm font-bold" v-if="widget.price">{{ toDecimalReadable(widget.pair, widget.price.high) }}</h4>
+            </span>
+          <span>Low: <h4 class="text-sm font-bold" v-if="widget.price">{{ toDecimalReadable(widget.pair, widget.price.low) }}</h4></span>
+        </div>
+  
+        <table class="table w-full" style="font-size: .8em;">
+          <tbody>
+            <tr>
+              <td class="py-1 pr-4 border-b border-grey-light">Indicator</td>
+              <td class="py-1 pr-4 border-b border-grey-light text-right">Result</td>
+            </tr>
+            <tr v-for="indicator in widget.calculation.percentage.indicators" v-if="!indicator.text.startsWith('TF')">
+              <td class="font-bold py-1 pr-4 border-b border-grey-light">
+                {{ indicator.text }}</td>
+              <td class="py-1 pr-4 border-b border-grey-light text-right">
+                <span
+                  :content="`Sell ${indicator.result[0].toFixed(1)}% - Buy : ${indicator.result[1].toFixed(1)}%`"
+                  :class="{'text-green-500': (indicator.result[0] < 50), 'text-red-500': (indicator.result[0] > 50)}" v-tippy>
+                  {{ toIndicator(indicator.result) }}
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table w-full mt-3" style="font-size: .8em;">
+          <tbody>
+            <tr>
+              <td v-for="indicator in widget.calculation.percentage.indicators" v-if="indicator.text.startsWith('TF')" class="w-1/4 font-bold py-1 pr-4 border-b border-grey-light">
+                {{ indicator.text }}</td>
+            </tr>
+            <tr>
+              <td v-for="indicator in widget.calculation.percentage.indicators" v-if="indicator.text.startsWith('TF')" class="w-1/4 py-1 pr-4 border-b border-grey-light">
+                <span
+                  :content="`Sell ${indicator.result[0].toFixed(1)}% - Buy : ${indicator.result[1].toFixed(1)}%`"
+                  :class="{'text-green-500': (indicator.result[0] < 50), 'text-red-500': (indicator.result[0] > 50)}" v-tippy>
+                  {{ toIndicatorSort(indicator.result) }}
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="mt-2">
+          <span style="font-size: .7em;"><span class="font-bold">Last Activity: </span>{{ toDate(widget.last_activity) }}</span>
+        </div>
+      </div>
+    </div>
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="https://unpkg.com/mqtt@2.17.0/dist/mqtt.min.js"></script>
+  <script src="https://unpkg.com/vue-tippy@4/dist/vue-tippy.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/lodash.debounce@4.0.8/index.js" integrity="sha256-eLukxUXKuOUKah/SVw+FOlmqz5YPDl0mTBK7RvmqowI=" crossorigin="anonymous"></script>
+  <script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js" async defer></script>
+
+  <script src="assets/components/widget.js"></script>
+  <script src="assets/monitor.js"></script>
+</body>
+
+</html>
