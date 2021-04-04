@@ -47,7 +47,7 @@ var app = new Vue({
       }
     },
     debounceSearch: debounce(function (event) {
-      if (event && event.target && event.target.value) {
+      if (event && event.target) {
         this.search = event.target.value;
       }
     }, 500),
