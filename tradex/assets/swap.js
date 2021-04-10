@@ -5,7 +5,7 @@ const app = new Vue({
       prices: null,
       results: {},
       tokens: ["bgov", "pancaketools"],
-      amounts: [ 62.90504567, 50.67042621 ]
+      amounts: [ 64.78, 50.67042621 ]
     }
   },
   methods: {
