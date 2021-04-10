@@ -3,6 +3,7 @@ const app = new Vue({
   data () {
     return {
       prices: null,
+      portofolioChanged: 0,
       results: {},
       tokens: ["bgov", "pancaketools", "vancat"],
       amounts: [ 65.03, 50.67042621, 43200400 ]
@@ -17,6 +18,8 @@ const app = new Vue({
     let total = 0;
 
     const prices = await this.fetchPrices();
+    
+    let lastTotalAmount = window.localStorage.getItem("last_total_amount");
 
     this.prices = prices;
     this.tokens.forEach((token, index) => {
@@ -28,6 +31,13 @@ const app = new Vue({
       total += totalPrice;
     })
 
-    this.results.total = "Rp. " + total.toFixed(0)
+    if (!lastTotalAmount) {
+      lastTotalAmount = total;
+    }
+
+    this.results.total = "Rp. " + total.toFixed(0);
+    this.results.totalChanged = ((total - lastTotalAmount) / lastTotalAmount * 100).toFixed(2) + "%";
+
+    window.localStorage.setItem("last_total_amount", total);
   }
 })
