@@ -23,7 +23,7 @@ const app = new Vue({
       const price = prices[token]["idr"];
       const totalPrice = this.amounts[index] * price;
 
-      this.results[token] = { idr: price, total: "Rp. " + (totalPrice).toFixed(0) }
+      this.results[token] = { idr: price, amount: this.amounts[index], total: "Rp. " + (totalPrice).toFixed(0) }
 
       total += totalPrice;
     })
