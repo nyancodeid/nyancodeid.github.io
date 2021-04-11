@@ -6,7 +6,7 @@ const app = new Vue({
       portofolioChanged: 0,
       results: {},
       tokens: ["bgov", "pancaketools", "vancat"],
-      amounts: [ 65.53, 50.67042621, 43200400 ]
+      amounts: [ 66.53, 80.67042621, 43200400 ]
     }
   },
   methods: {
