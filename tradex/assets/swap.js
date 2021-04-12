@@ -16,7 +16,7 @@ const app = new Vue({
     toPercentage (changed) {
       if (!changed) return 0;
       
-      return (changed && changed >= 0) ? changed.toFixed(2) : 0;
+      return changed.toFixed(2);
     }
   },
   async mounted () {
