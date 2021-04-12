@@ -12,6 +12,11 @@ const app = new Vue({
   methods: {
     fetchPrices () {
       return fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${this.tokens.join(',')}&vs_currencies=idr&include_24hr_change=true`).then(res => res.json())
+    },
+    toPercentage (changed) {
+      if (!changed) return 0;
+      
+      return (changed && changed >= 0) ? changed.toFixed(2) : 0;
     }
   },
   async mounted () {
