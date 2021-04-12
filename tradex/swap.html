@@ -17,7 +17,7 @@
       <div class="w-full md:w-2/12 mr-4 mb-3 md:mb-0" v-for="(value, token) in prices">
         <div class="flex">
           <h5 class="text-xs mr-3">{{ token.toUpperCase() }}</h5>
-          <h5 class="text-xs" :class="{'text-green-500': (value.idr_24h_change > 0), 'text-red-500': (value.idr_24h_change < 0) }">({{ value.idr_24h_change.toFixed(2) }}%)</h5>
+          <h5 class="text-xs" :class="{'text-green-500': (value.idr_24h_change > 0), 'text-red-500': (value.idr_24h_change < 0) }">({{ toPercentage(value.idr_24h_change) }}%)</h5>
         </div>
         <h1 class="text-xl font-bold">IDR {{ value.idr }}</h1>
       </div>
