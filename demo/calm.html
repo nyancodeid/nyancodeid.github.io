@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://static.staticsave.com/cssforsib/style.css">
+	<title>Calm</title>
+	<style>
+		main {
+			flex-direction: column;
+		}
+		main .hero {
+			display:  flex;
+			align-items: center;
+		}
+		.products {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			gap: 1em;
+		}
+		.products .product-item {
+			display: flex;
+			align-items: center;
+			border: 1px solid #dddddd;
+			border-radius: 1em;
+		}
+		.products .product-item img {
+			width: 128px;
+		}
+	</style>
+</head>
+<body>
+	<div id="app"></div>
+
+	<script>
+		const fetchData = async () => {
+			const response = await fetch('https://raw.githubusercontent.com/agissept/sib-challenge/master/data.json');
+			const data = await response.json();
+
+			return data;
+		}
+
+		const renderData = ({ header, main, data: products }) => {
+			const appContainer = document.getElementById('app');
+
+			const headerSection = document.createElement('header');
+			headerSection.classList.add('header');
+
+			headerSection.innerHTML = header;
+
+			const mainSection = document.createElement('main');
+			mainSection.classList.add('main');
+
+			mainSection.innerHTML = `<div class="hero">${main}</div>`;
+
+			const productListSection = renderProducts({
+				products
+			});
+
+			appContainer.appendChild(headerSection);
+			appContainer.appendChild(mainSection);
+			mainSection.appendChild(productListSection);
+		}
+
+		const renderProducts = ({ products }) => {
+			const container = document.createElement('section');
+			container.classList.add('products');
+
+			products.forEach(product => {
+				const element = document.createElement('div');
+				element.classList.add('product-item');
+
+				element.innerHTML = `
+				<img src="${product.image_url}" alt="${product.name}" />
+
+				<div>
+					<h3>${product.name}</h3>
+					<span>${product.rating}</span>
+					<p>${product.description}</p>
+				</div>
+				`;
+
+				container.appendChild(element);
+			});
+
+			return container;
+		}
+
+		const initApp = async () => {
+			const data = await fetchData();
+
+			renderData(data);
+		}
+
+		document.addEventListener('DOMContentLoaded', () => {
+			initApp();
+		});
+	</script>
+</body>
+</html>
